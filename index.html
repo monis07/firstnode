@@ -42,7 +42,7 @@
 
     //code for delete
 function delete_id(id){
-    fetch("/todos/"+id,{
+    fetch("./todos/"+id,{
         method:"DELETE",
     }).then(()=>{
         const parentElement = document.getElementById('mainarea');
@@ -60,7 +60,7 @@ children.forEach(child => {
 
 //Code for getting data 
 function getData(){
-        fetch("/todos",{
+        fetch("./todos",{
         method:"GET"
     }).then(result=>result.json())
     .then(response=>{
@@ -104,7 +104,7 @@ function onPress(){
     console.log(title);
     var description=document.getElementById('description').value;
     console.log(description);
-        fetch("/todos",{
+        fetch("./todos",{
         method:"POST",
         headers:{
             'Content-Type':'application/json',
@@ -168,7 +168,7 @@ function onPress(){
         }
     });
 
-        fetch('/todos/' + id, {
+        fetch('./todos/' + id, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json',
